@@ -101,26 +101,25 @@ lis.modal(type).getHtml().addClass("bounce");
 // Lors d'une requête ajax
 $.post("/save.php",{id:1},function(json){
 
-	if(json.hasError)
-		return lis.modal("error","Erreur lors de l'enregistrement : "+json.error);
+    if(json.hasError)
+        return lis.modal("error","Erreur lors de l'enregistrement : "+json.error);
 	
-	lis.modal("success","Enregirstrement effectué avec succès");
+    lis.modal("success","Enregirstrement effectué avec succès");
 });
 
 // Pour confirmer une suppression
 $("#del").on("click",function(){
 
-	lis.modal("confirm","Voulez-vous vraiment supprimer cet élément ?",function(){
+    lis.modal("confirm","Voulez-vous vraiment supprimer cet élément ?",function(){
 	
-		$.post("/del.php",{id:1},function(json){
+        $.post("/del.php",{id:1},function(json){
 			
-			if(json.hasError)
-				return lis.modal("error","Erreur lors de la suppression : "+json.error);
+            if(json.hasError)
+                return lis.modal("error","Erreur lors de la suppression : "+json.error);
 
-			lis.modal("success","Elément supprimé avec succès");
-		})
-	})
-
+            lis.modal("success","Elément supprimé avec succès");
+        })
+    })
 });
 
 // Avec passage de paramètre
