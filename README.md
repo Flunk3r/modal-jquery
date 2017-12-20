@@ -163,4 +163,7 @@ lis.modal("info").close();
 
 // Avec un type personalisé
 lis.modal("maModal").close();
+
+// Manipuler le contenu de la modal
+lis.modal("maModal").getContent().find("div").text();
 ```
