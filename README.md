@@ -16,6 +16,9 @@ Les icones par défauts sont gérer par FontAwesome
 
 Les modals s'utilisent uniquement dans le code JS, elles ont pour utilité de remplacer les fonctions `alert()` et `confirm()`.
 Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibliothèque de fonctions.
+
+Attention, contrairement aux fonction `alert()` et `confirm()`, le code qui suit l'initialisation de la modal est executé !
+
 ```js
 // modal d'information simple (alert())
 lis.modal("info","Ceci est une information"); 
@@ -36,7 +39,13 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 # Options
 
  ```js
- default = {
+lis.modal(type,options,onSuccess,onCancel); 
+// type (string) : Type de modal (info|warning|danger|success|default) OU identifiant de la modal
+// options (string | object) facultatif : Contenu de la modal OU paramètres d'options
+// onSuccess (function) facultatif : Fonction callback executé soit à la fermeture de la modal, soit onSuccess pour le type 'confirm' 
+// onCancel (function) facultatif : Fonction callback executé uniquement lors de l'anulation pour le type 'confirm'
+
+default = {
 	title : "Information",	// Titre de la modal
 	content : "",		// Contenu HTML ou DOM de la modal	
 	btn : [{			// Array contenant les bouton d'actions
@@ -64,11 +73,26 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 
 
 ```js
-$.post("/save.php",{},function(json){
+// lors d'une requête ajax
+$.post("/save.php",{id:1},function(json){
 
 	if(json.hasError)
-		return lis.modal("error","Erreur lors de l'enregistrement");
+		return lis.modal("error","Erreur lors de l'enregistrement : "+json.error);
 	
 	lis.modal("success","Enregirstrement effectué avec succès");
+})
+
+// pour confirmer une suppression
+$("#del").on("click",function(){
+
+	lis.modal("confirm","Voulez-vous vraiment supprimer cet élément ?",function(){
+		$.post("/del.php",{id:1},function(json){
+			if(json.hasError)
+				return lis.modal("error","Erreur lors de la suppression : "+json.error);
+
+			lis.modal("success","Elément supprimé avec succès");
+		})
+	})
+
 })
 ```
