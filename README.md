@@ -20,20 +20,21 @@ Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibl
 // modal d'information simple (alert())
 lis.modal("info","Ceci est une information"); 
 
-// modal d'erreur avec fonction à la fermeture
+// modal d'erreur avec fonction callback à la fermeture
 lis.modal("erreur","Une erreur est survenu",function(){	
-	// onClose
+// onClose
 });
 
-// modal de confirmation (confirm()) avec fonction onSuccess et onCancel
+// modal de confirmation (confirm()) avec fonction callback onSuccess et onCancel
 lis.modal("confirm","Voulez-vous continuer ?",function(){
-	// onSuccess
+// onSuccess
 },function(){
-	// onCancel
+// onCancel
 })
 ```
 
 # Options
+
  ```js
  default = {
 	title : "Information",	// Titre de la modal
@@ -42,7 +43,7 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 		id : "lis-close-modal",	// ID du bouton
 		content : "Fermer",	// Texte du bouton
 		class : "danger",	// class du bouton (info|warning|danger|success|default)
-		ico : "fa-times",	// Icone du bouton (FontAwesome)
+		ico : "times",	// Icone du bouton (FontAwesome)
 		close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
 		onClick : ""		// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
 	}],
