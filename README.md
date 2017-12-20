@@ -45,7 +45,7 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 		class : "danger",	// class du bouton (info|warning|danger|success|default)
 		ico : "times",	// Icone du bouton (FontAwesome)
 		close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
-		onClick : ""		// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
+		onClick : function(){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
 	}],
 	id : "lis-modal",		// ID de la modal
 	type : "info",		// Type de la modal (info|warning|danger|success|default)
