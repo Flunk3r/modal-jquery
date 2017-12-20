@@ -18,7 +18,10 @@ Les modals s'utilisent uniquement dans le code JS, elles ont pour utilité de re
 Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibliothèque de fonctions.
 ```js
 lis.modal("info","Ceci est une information"); 	// modal d'information simple
-lis.modal("erreur","Une erreur est survenu");	// modal d'erreur
+lis.modal("erreur","Une erreur est survenu",function(){	// modal d'erreur
+	// onClose
+});
+
 lis.modal("confirm","Voulez-vous continuer ?",function(){
 	// onSuccess
 },function(){
