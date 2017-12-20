@@ -154,7 +154,7 @@ lis.modal("maModal",{
     animateIn : "bounceInDown",
 })
 
-// Avec chargement du contenu par Ajax
+// Avec chargement du contenu par Ajax. Le onLoad() est executé après la récupération du contenu.
 lis.modal("info",{
     ajax:{
         url:"./get.php",
