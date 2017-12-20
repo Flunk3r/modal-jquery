@@ -81,6 +81,9 @@ default = {
 
 # Méthode
 ```js
+// ouverture manuelle d'une modal
+lis.modal(type).open();
+
 // Fermeture de la modal
 lis.modal(type).close();
 
