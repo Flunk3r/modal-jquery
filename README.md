@@ -17,6 +17,8 @@ Les icones par défauts sont gérer par FontAwesome
 Les modals s'utilisent uniquement dans le code JS, elles ont pour utilité de remplacer les fonctions `alert()` et `confirm()`.
 Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibliothèque de fonctions.
 
+La modal s'ouvre directement après sont appel.
+
 Attention, contrairement aux fonction `alert()` et `confirm()`, le code qui suit l'initialisation de la modal est executé !
 
 ```js
@@ -54,13 +56,13 @@ default = {
 		class : "danger",	// class du bouton (info|warning|danger|success|default)
 		ico : "times",		// Icone du bouton (FontAwesome)
 		close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
-		onClick : function(){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
+		onClick : function(modal,btn){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
 	}],
 	id : "lis-modal",		// ID de la modal
 	type : "info",		// Type de la modal (info|warning|danger|success|default)
 	icon : "info-circle",	// Icone de la modal (FontAwesome)
-	onClose : function(){},	// Fonction à exectuer lors de la fermeture de la modal (après animation)
-	onLoad : function(){},	// Fonction à executer lors de l'ouverture de la modal (après animation)
+	onClose : function(modal){},	// Fonction à exectuer lors de la fermeture de la modal (après animation)
+	onLoad : function(modal){},	// Fonction à executer lors de l'ouverture de la modal (après animation)
 	close : true,		// Permet de fermer automatiquement la modal lors du clique sur le fond
 	size : "md",			// Taille de la modal (xs : 300px | md : 500px | lg : 800px)
 	animateIn : "fadeInDown",	// Animation d'apparition de la modal (animate.css)
@@ -73,16 +75,16 @@ default = {
 
 
 ```js
-// lors d'une requête ajax
+// Lors d'une requête ajax
 $.post("/save.php",{id:1},function(json){
 
 	if(json.hasError)
 		return lis.modal("error","Erreur lors de l'enregistrement : "+json.error);
 	
 	lis.modal("success","Enregirstrement effectué avec succès");
-})
+});
 
-// pour confirmer une suppression
+// Pour confirmer une suppression
 $("#del").on("click",function(){
 
 	lis.modal("confirm","Voulez-vous vraiment supprimer cet élément ?",function(){
@@ -94,5 +96,38 @@ $("#del").on("click",function(){
 		})
 	})
 
+});
+
+// Avec passage de paramètre
+lis.modal("maModal",{
+	title : "Liste des participant",
+	content : contentUL,
+	btn : [{
+		id : "lis-success-modal",
+		content : "Sélectionner",
+		class : "success",
+		ico : "check",
+		close : true,
+		onClick : function(modal,btn){
+			btn.hide();
+			modal.ferme();
+		}
+	},{
+		id : "lis-close-modal",
+		content : "Annuler",
+		class : "danger",
+		ico : "times",
+		close : true,
+		onClick : function(modal){
+			lis.modal("confirm","Voulez-vous vraiment annuler ?",function(){
+				modal.ferme();
+			})
+		}
+	}],
+	type : "info",
+	icon : "bars",
+	close : false,
+	size : "lg",
+	animateIn : "bounceInDown",
 })
 ```
