@@ -75,8 +75,11 @@ default = {
 
 # Méthode
 ```js
-// Pour le moment il n'y a qu'une méthode
-lis.modal(type).close(); // permet de fermer la modal
+// Fermeture de la modal
+lis.modal(type).close();
+
+// Récupérer le contenu de la modal
+lis.modal(type).getContent();
 ```
 
 # Exemples
