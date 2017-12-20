@@ -52,6 +52,11 @@ lis.modal(type,options,onSuccess,onCancel);
 default = {
 	title : "Information",	// Titre de la modal
 	content : "",		// Contenu HTML ou DOM de la modal	
+	ajax : {		// Permet de spécifier le contenu HTML à récupérer
+		url : "",	// URL à contacter
+		post:{}		// paramètres POST à transmettre
+		get : {}	// paramètres GET à transmettre
+	},		
 	btn : [{			// Array contenant les bouton d'actions
 		id : "lis-close-modal",	// ID du bouton
 		content : "Fermer",	// Texte du bouton
