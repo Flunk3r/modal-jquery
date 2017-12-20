@@ -63,7 +63,7 @@ default = {
 	icon : "info-circle",	// Icone de la modal (FontAwesome)
 	onClose : function(modal){},	// Fonction à exectuer lors de la fermeture de la modal (après animation)
 	onLoad : function(modal){},	// Fonction à executer lors de l'ouverture de la modal (après animation)
-	close : true,		// Permet de fermer automatiquement la modal lors du clique sur le fond
+	closed : true,		// Permet de fermer automatiquement la modal lors du clique sur le fond
 	size : "md",			// Taille de la modal (xs : 300px | md : 500px | lg : 800px)
 	animateIn : "fadeInDown",	// Animation d'apparition de la modal (animate.css)
 	animateOut : "fadeOutUp",	// Animation de fermeture de la modal (animate.css)
@@ -74,7 +74,7 @@ default = {
 # Méthode
 ```js
 // Pour le moment il n'y a qu'une méthode
-lis.modal(type).ferme(); // permet de fermer la modal
+lis.modal(type).close(); // permet de fermer la modal
 ```
 
 # Exemples
@@ -94,7 +94,9 @@ $.post("/save.php",{id:1},function(json){
 $("#del").on("click",function(){
 
 	lis.modal("confirm","Voulez-vous vraiment supprimer cet élément ?",function(){
+	
 		$.post("/del.php",{id:1},function(json){
+			
 			if(json.hasError)
 				return lis.modal("error","Erreur lors de la suppression : "+json.error);
 
@@ -132,7 +134,7 @@ lis.modal("maModal",{
 	}],
 	type : "info",
 	icon : "bars",
-	close : false,
+	closed : false,
 	size : "lg",
 	animateIn : "bounceInDown",
 })
@@ -145,10 +147,10 @@ lis.modal("info","Ceci est une information");
 
 // Manipulation de la modal
 var modal = lis.modal("info") // retourne la modal qui à comme type/ID "info"
-modal.ferme();
+modal.close();
 // OU
-lis.modal("info").ferme();
+lis.modal("info").close();
 
 // Avec un type personalisé
-lis.modal("maModal").ferme();
+lis.modal("maModal").close();
 ```
