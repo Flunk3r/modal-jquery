@@ -17,8 +17,6 @@ Les icones par défauts sont gérer par FontAwesome
 Les modals s'utilisent uniquement dans le code JS, elles ont pour utilité de remplacer les fonctions `alert()` et `confirm()`.
 Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibliothèque de fonctions.
 
-La modal s'ouvre directement après sont appel.
-
 Attention, contrairement aux fonction `alert()` et `confirm()`, le code qui suit l'initialisation de la modal est executé !
 
 ```js
