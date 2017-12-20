@@ -50,32 +50,32 @@ lis.modal(type,options,onSuccess,onCancel);
 // onCancel (function) facultatif : Fonction callback executé uniquement lors de l'anulation pour le type 'confirm'
 
 default = {
-	title : "Information",	// Titre de la modal
-	content : "",		// Contenu HTML ou DOM de la modal	
-	ajax : {		// Permet de spécifier le contenu HTML à récupérer
-		url : "",	// URL à contacter
-		post:{}		// paramètres POST à transmettre
-		get : {}	// paramètres GET à transmettre
-	},		
-	btn : [{			// Array contenant les bouton d'actions
-		id : "lis-close-modal",	// ID du bouton
-		content : "Fermer",	// Texte du bouton
-		class : "danger",	// class du bouton (info|warning|danger|success|default)
-		ico : "times",		// Icone du bouton (FontAwesome)
-		close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
-		onClick : function(modal,btn){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
-	}],
-	id : "lis-modal",		// ID de la modal
-	type : "info",		// Type de la modal (info|warning|danger|success|default)
-	icon : "info-circle",	// Icone de la modal (FontAwesome)
-	onClose : function(modal){},	// Fonction à exectuer lors de la fermeture de la modal (après animation)
-	onLoad : function(modal){},	// Fonction à executer lors de l'ouverture de la modal (après animation)
-	closed : true,		// Permet de fermer automatiquement la modal lors du clique sur le fond
-	size : "md",			// Taille de la modal (xs : 300px | md : 500px | lg : 800px)
-	animateIn : "fadeInDown",	// Animation d'apparition de la modal (animate.css)
-	animateOut : "fadeOutUp",	// Animation de fermeture de la modal (animate.css)
-	keyboard : true,		// Activation de la fermeture par le clavier ESC ou ENTER uniquement s'il n'y a qu'un bouton
-	show : true, 			// Affiche automatiquement la modal lors de ça création. Si false, il faut utiliser la fonction .open()
+    title : "Information",	// Titre de la modal
+    content : "",		// Contenu HTML ou DOM de la modal	
+    ajax : {		// Permet de spécifier le contenu HTML à récupérer
+        url : "",	// URL à contacter
+        post:{}		// paramètres POST à transmettre
+        get : {}	// paramètres GET à transmettre
+    },		
+    btn : [{			// Array contenant les bouton d'actions
+        id : "lis-close-modal",	// ID du bouton
+        content : "Fermer",	// Texte du bouton
+        class : "danger",	// class du bouton (info|warning|danger|success|default)
+        ico : "times",		// Icone du bouton (FontAwesome)
+        close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
+        onClick : function(modal,btn){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
+    }],
+    id : "lis-modal",		// ID de la modal
+    type : "info",		// Type de la modal (info|warning|danger|success|default)
+    icon : "info-circle",	// Icone de la modal (FontAwesome)
+    onClose : function(modal){},	// Fonction à exectuer lors de la fermeture de la modal (après animation)
+    onLoad : function(modal){},	// Fonction à executer lors de l'ouverture de la modal (après animation)
+    closed : true,		// Permet de fermer automatiquement la modal lors du clique sur le fond
+    size : "md",			// Taille de la modal (xs : 300px | md : 500px | lg : 800px)
+    animateIn : "fadeInDown",	// Animation d'apparition de la modal (animate.css)
+    animateOut : "fadeOutUp",	// Animation de fermeture de la modal (animate.css)
+    keyboard : true,		// Activation de la fermeture par le clavier ESC ou ENTER uniquement s'il n'y a qu'un bouton
+    show : true, 		// Affiche automatiquement la modal lors de ça création. Si false, il faut utiliser la fonction .open()
 };
 ```
 
