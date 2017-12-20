@@ -36,7 +36,7 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 })
 ```
 
-Vous pouvez voir un exemple sur http://besoindundeveloppeur.com/lib/lis-modal/
+Vous pouvez voir des exemples sur http://besoindundeveloppeur.com/lib/lis-modal/
 
 # Options
 
@@ -94,7 +94,7 @@ lis.modal(type).getHtml().addClass("bounce");
 
 # Exemples
 
-
+Vous pouvez voir des exemples sur http://besoindundeveloppeur.com/lib/lis-modal/
 ```js
 // Lors d'une requête ajax
 $.post("/save.php",{id:1},function(json){
