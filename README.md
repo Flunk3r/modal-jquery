@@ -17,17 +17,20 @@ Les icones par défauts sont gérer par FontAwesome
 Les modals s'utilisent uniquement dans le code JS, elles ont pour utilité de remplacer les fonctions `alert()` et `confirm()`.
 Toutes mes fonctions JS sont incluses dans l'objet `lis` afin de créer une bibliothèque de fonctions.
 ```js
-lis.modal("info","Ceci est une information");
-// lis.modal(type,options);
-type (string) : identifiant de la modal
-options (string | objet) : paramètres de la modal;
+lis.modal("info","Ceci est une information"); 	// modal d'information simple
+lis.modal("erreur","Une erreur est survenu");	// modal d'erreur
+lis.modal("confirm","Voulez-vous continuer ?",function(){
+	// onSuccess
+},function(){
+	// onCancel
+})
 ```
 
 # Options
  ```js
  default = {
-	title : "Information",	// titre de la modal
-	content : "",		// contenu HTML de la modal	
+	title : "Information",	// Titre de la modal
+	content : "",		// Contenu HTML ou DOM de la modal	
 	btn : [{			// Array contenant les bouton d'actions
 		id : "lis-close-modal",	// ID du bouton
 		content : "Fermer",	// Texte du bouton
