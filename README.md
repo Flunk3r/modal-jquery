@@ -38,6 +38,8 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 })
 ```
 
+Vous pouvez voir un exemple sur http://besoindundeveloppeur.com/lib/lis-modal/
+
 # Options
 
  ```js
