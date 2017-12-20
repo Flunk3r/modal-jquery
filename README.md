@@ -43,7 +43,7 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 		id : "lis-close-modal",	// ID du bouton
 		content : "Fermer",	// Texte du bouton
 		class : "danger",	// class du bouton (info|warning|danger|success|default)
-		ico : "times",	// Icone du bouton (FontAwesome)
+		ico : "times",		// Icone du bouton (FontAwesome)
 		close : true,		// Permet de fermer automatiquement la modal lors du clique sur le bouton
 		onClick : function(){}	// Fonction à exectuer au clique sur le bouton (avant animation de fermeture)
 	}],
@@ -58,4 +58,17 @@ lis.modal("confirm","Voulez-vous continuer ?",function(){
 	animateOut : "fadeOutUp",	// Animation de fermeture de la modal (animate.css)
 	keyboard : true,		// Activation de la fermeture par le clavier ESC ou ENTER uniquement s'il n'y a qu'un bouton
 };
+```
+
+# Exemples
+
+
+```js
+$.post("/save.php",{},function(json){
+
+	if(json.hasError)
+		return lis.modal("error","Erreur lors de l'enregistrement");
+	
+	lis.modal("success","Enregirstrement effectué avec succès");
+})
 ```
