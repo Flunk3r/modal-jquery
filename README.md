@@ -75,6 +75,7 @@ default = {
 	animateIn : "fadeInDown",	// Animation d'apparition de la modal (animate.css)
 	animateOut : "fadeOutUp",	// Animation de fermeture de la modal (animate.css)
 	keyboard : true,		// Activation de la fermeture par le clavier ESC ou ENTER uniquement s'il n'y a qu'un bouton
+	show : true, 			// Affiche automatiquement la modal lors de ça création. Si false, il faut utiliser la fonction .open()
 };
 ```
 
