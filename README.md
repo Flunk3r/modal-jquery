@@ -118,7 +118,7 @@ lis.modal("maModal",{
 		close : true,
 		onClick : function(modal,btn){
 			btn.hide();
-			modal.ferme();
+			modal.close();
 		}
 	},{
 		id : "lis-close-modal",
@@ -128,7 +128,7 @@ lis.modal("maModal",{
 		close : true,
 		onClick : function(modal){
 			lis.modal("confirm","Voulez-vous vraiment annuler ?",function(){
-				modal.ferme();
+				modal.close();
 			})
 		}
 	}],
