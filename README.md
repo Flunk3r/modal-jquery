@@ -71,6 +71,12 @@ default = {
 };
 ```
 
+# Méthode
+```js
+// Pour le moment il n'y a qu'une méthode
+lis.modal(type).ferme(); // permet de fermer la modal
+```
+
 # Exemples
 
 
@@ -130,4 +136,19 @@ lis.modal("maModal",{
 	size : "lg",
 	animateIn : "bounceInDown",
 })
+```
+
+# Manipuler la modal
+```js
+// Ouverture de la modal :
+lis.modal("info","Ceci est une information");
+
+// Manipulation de la modal
+var modal = lis.modal("info") // retourne la modal qui à comme type/ID "info"
+modal.ferme();
+// OU
+lis.modal("info").ferme();
+
+// Avec un type personalisé
+lis.modal("maModal").ferme();
 ```
