@@ -125,35 +125,36 @@ $("#del").on("click",function(){
 
 // Avec passage de paramètre
 lis.modal("maModal",{
-	title : "Liste des participant",
-	content : contentUL,
-	btn : [{
-		id : "lis-success-modal",
-		content : "Sélectionner",
-		class : "success",
-		ico : "check",
-		close : true,
-		onClick : function(modal,btn){
-			btn.hide();
-			modal.close();
-		}
-	},{
-		id : "lis-close-modal",
-		content : "Annuler",
-		class : "danger",
-		ico : "times",
-		close : true,
-		onClick : function(modal){
-			lis.modal("confirm","Voulez-vous vraiment annuler ?",function(){
-				modal.close();
-			})
-		}
-	}],
-	type : "info",
-	icon : "bars",
-	closed : false,
-	size : "lg",
-	animateIn : "bounceInDown",
+    title : "Liste des participant",
+    content : contentUL,
+    btn : [{
+        id : "lis-success-modal",
+        content : "Sélectionner",
+        class : "success",
+        ico : "check",
+        close : false,
+        onClick : function(modal,btn){
+            lis.modal("confirm","Voulez-vous vraiment sélectionner le participant : "+modal.getContent().find("select").val(),function(){
+                modal.close();
+            });
+        }
+    },{
+        id : "lis-close-modal",
+        content : "Annuler",
+        class : "danger",
+        ico : "times",
+        close : false,
+        onClick : function(modal,btn){
+            lis.modal("confirm","Voulez-vous vraiment annuler ?",function(){
+                modal.close();
+            })
+        }
+    }],
+    type : "info",
+    icon : "bars",
+    closed : false,
+    size : "lg",
+    animateIn : "bounceInDown",
 })
 ```
 
