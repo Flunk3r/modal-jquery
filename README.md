@@ -153,6 +153,19 @@ lis.modal("maModal",{
     size : "lg",
     animateIn : "bounceInDown",
 })
+
+// Avec chargement du contenu par Ajax
+lis.modal("info",{
+    ajax:{
+        url:"./get.php",
+        post:{id:1}
+    },
+    onLoad:function(modal){
+        modal
+        .getContent()
+        .append("Chargement complet")
+    }
+});
 ```
 
 # Manipuler la modal
