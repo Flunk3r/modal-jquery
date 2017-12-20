@@ -85,6 +85,9 @@ lis.modal(type).close();
 
 // Récupérer le contenu de la modal
 lis.modal(type).getContent();
+
+// Récupérer le dom complet de la modal
+lis.modal(type).getHtml().addClass("bounce");
 ```
 
 # Exemples
