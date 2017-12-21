@@ -99,6 +99,10 @@ lis.setModalOption(options);
 
 Vous pouvez voir des exemples sur http://besoindundeveloppeur.com/lib/lis-modal/
 ```js
+// Faire une simple alerte
+lis.modal("info","Ceci est information ...");
+```
+```js
 // Lors d'une requête ajax
 $.post("/save.php",{id:1},function(json){
 
