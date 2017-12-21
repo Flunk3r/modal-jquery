@@ -107,7 +107,8 @@ $.post("/save.php",{id:1},function(json){
 	
     lis.modal("success","Enregirstrement effectué avec succès");
 });
-
+```
+```js
 // Pour confirmer une suppression
 $("#del").on("click",function(){
 
@@ -122,7 +123,8 @@ $("#del").on("click",function(){
         })
     })
 });
-
+```
+```js
 // Avec passage de paramètre
 lis.modal("maModal",{
     title : "Liste des participant",
@@ -156,7 +158,8 @@ lis.modal("maModal",{
     size : "lg",
     animateIn : "bounceInDown",
 })
-
+```
+```js
 // Avec chargement du contenu par Ajax. Le onLoad() est executé après la récupération du contenu.
 lis.modal("info",{
     ajax:{
