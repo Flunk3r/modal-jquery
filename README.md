@@ -77,7 +77,7 @@ default = {
 };
 ```
 
-# Méthode
+# Méthodes
 ```js
 // ouverture manuelle d'une modal
 lis.modal(type).open();
@@ -90,6 +90,9 @@ lis.modal(type).getContent();
 
 // Récupérer le dom complet de la modal
 lis.modal(type).getDOM().addClass("bounce");
+
+// Permer de modifier les options par défauts 
+lis.setModalOption(options);
 ```
 
 # Exemples
