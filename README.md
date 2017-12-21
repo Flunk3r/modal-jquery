@@ -85,6 +85,9 @@ lis.modal(type).open();
 // Fermeture de la modal
 lis.modal(type).close();
 
+// Permet d'ajouter un bouton supplémentaire
+lis.modal(type).addBtn(btn); // btn (object) : {id,content,class,ico,close,onClicl}
+
 // Récupérer le contenu de la modal
 lis.modal(type).getContent();
 
